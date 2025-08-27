@@ -58,7 +58,7 @@ describe('ExportComments Zapier Integration', () => {
     expect(App.triggers.exportCreated.operation.sample.event).toBe('export.created');
     
     expect(App.triggers.exportCompleted.operation.sample).toBeDefined();
-    expect(App.triggers.exportCompleted.operation.sample.event).toBe('export.done');
+    expect(App.triggers.exportCompleted.operation.sample.event).toBe('export.finished');
     
     expect(App.triggers.exportFailed.operation.sample).toBeDefined();
     expect(App.triggers.exportFailed.operation.sample.event).toBe('export.failed');

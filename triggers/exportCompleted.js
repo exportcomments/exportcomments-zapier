@@ -9,7 +9,7 @@ const subscribeHook = async (z, bundle) => {
     },
     body: {
       url: bundle.targetUrl,
-      event: 'export.done'
+      event: 'export.finished'
     }
   };
   
@@ -34,7 +34,7 @@ const unsubscribeHook = async (z, bundle) => {
 
 const performList = async (z, bundle) => {
   const options = {
-    url: 'https://exportcomments.com/api/v1/zapier/events/export.done/sample',
+    url: 'https://exportcomments.com/api/v1/zapier/events/export.finished/sample',
     method: 'GET',
     headers: {
       'X-AUTH-TOKEN': bundle.authData.api_key,
@@ -92,7 +92,7 @@ export default {
       },
       "message_id": "test-export-done-123",
       "event_id": "uuid-event-id",
-      "event": "export.done",
+      "event": "export.finished",
       "status": "done"
     },
     outputFields: [
