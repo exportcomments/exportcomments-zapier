@@ -63,4 +63,21 @@ describe('ExportComments Zapier Integration', () => {
     expect(App.triggers.exportFailed.operation.sample).toBeDefined();
     expect(App.triggers.exportFailed.operation.sample.event).toBe('export.failed');
   });
+
+  it('should test authentication with API key', async () => {
+    const bundle = {
+      authData: {
+        api_key: process.env.ZAPIER_TEST_API_KEY || 'test-api-key'
+      }
+    };
+
+    if (process.env.ZAPIER_TEST_API_KEY) {
+      const authTest = App.authentication.test;
+      expect(authTest.url).toBe('https://exportcomments.com/api/v1/zapier/auth/test');
+      expect(authTest.method).toBe('GET');
+      expect(authTest.headers['X-AUTH-TOKEN']).toBeDefined();
+    } else {
+      console.log('Skipping live auth test - no ZAPIER_TEST_API_KEY provided');
+    }
+  });
 });
