@@ -77,7 +77,7 @@ export default {
     performSubscribe: subscribeHook,
     performUnsubscribe: unsubscribeHook,
     perform: getWebhookData,
-    performList: performListSample,
+    performList: performList,
     sample: {
       "url": "https://www.instagram.com/mypage",
       "guid": "test-export-uuid",
