@@ -12,7 +12,7 @@ const subscribeHook = async (z, bundle) => {
       event: 'export.failed'
     }
   };
-  
+
   const response = await z.request(options);
   return response.data;
 };
@@ -27,7 +27,7 @@ const unsubscribeHook = async (z, bundle) => {
       'Accept': 'application/json'
     }
   };
-  
+
   await z.request(options);
   return {};
 };
@@ -53,6 +53,20 @@ const performList = async (z, bundle) => {
   return list;
 };
 
+const performListSample = async (z, bundle) => {
+  const options = {
+    url: 'https://exportcomments.com/api/v1/zapier/events/export.failed/sample',
+    method: 'GET',
+    headers: {
+      'X-AUTH-TOKEN': bundle.authData.api_key,
+      'Accept': 'application/json'
+    }
+  };
+
+  const response = await z.request(options);
+  return [response.data];
+};
+
 export default {
   key: 'exportFailed',
   noun: 'Export Failed',
@@ -65,7 +79,7 @@ export default {
     performSubscribe: subscribeHook,
     performUnsubscribe: unsubscribeHook,
     perform: getWebhookData,
-    performList: performList,
+    performList: performListSample,
     sample: {
       "url": "https://www.instagram.com/mypage",
       "guid": "test-export-uuid",
