@@ -12,7 +12,7 @@ const subscribeHook = async (z, bundle) => {
       event: 'export.requeued'
     }
   };
-  
+
   const response = await z.request(options);
   return response.data;
 };
@@ -27,23 +27,30 @@ const unsubscribeHook = async (z, bundle) => {
       'Accept': 'application/json'
     }
   };
-  
+
   await z.request(options);
   return {};
 };
+const getWebhookData = async (z, bundle) => {
+  const data = bundle.cleanedRequest;
 
+  return [data];
+};
 const performList = async (z, bundle) => {
   const options = {
-    url: 'https://exportcomments.com/api/v1/zapier/events/export.requeued/sample',
+    url: 'https://exportcomments.com/api/v1/webhooks/events?event=export.requeued',
     method: 'GET',
     headers: {
       'X-AUTH-TOKEN': bundle.authData.api_key,
       'Accept': 'application/json'
     }
   };
-  
   const response = await z.request(options);
-  return [response.data];
+  const list = [];
+  for (const item of response.data.items) {
+    list.push(JSON.parse(item.message));
+  }
+  return list;
 };
 
 export default {
@@ -57,7 +64,7 @@ export default {
     type: 'hook',
     performSubscribe: subscribeHook,
     performUnsubscribe: unsubscribeHook,
-    perform: performList,
+    perform: getWebhookData,
     performList: performList,
     sample: {
       "url": "https://www.instagram.com/mypage",
