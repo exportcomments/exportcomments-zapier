@@ -61,7 +61,6 @@ Creates a new export job using ExportComments API v3.
 - `followers` (optional) - Include followers data (boolean)
 - `likes` (optional) - Include likes data (boolean)  
 - `minTimestamp` (optional) - Unix timestamp for filtering
-- `cookies` (optional) - Authentication cookies for private content
 - `options` (optional) - Additional options as JSON string
 
 **Output:**

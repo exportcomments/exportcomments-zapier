@@ -69,7 +69,7 @@ const getWebhookData = async (z, bundle) => {
 
 export default {
   key: 'exportCompleted',
-  noun: 'Export Completed',
+  noun: 'Export',
   display: {
     label: 'Export Completed',
     description: 'Triggers when an export job successfully completes with download link.'

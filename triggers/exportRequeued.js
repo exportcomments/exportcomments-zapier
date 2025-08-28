@@ -67,7 +67,7 @@ const performListSample = async (z, bundle) => {
 };
 export default {
   key: 'exportRequeued',
-  noun: 'Export Requeued',
+  noun: 'Export',
   display: {
     label: 'Export Requeued',
     description: 'Triggers when an export job is requeued for retry after a temporary failure.'

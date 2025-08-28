@@ -21,7 +21,7 @@ describe('Create Export', () => {
   it('should have correct input fields defined', () => {
     const inputFields = createExport.operation.inputFields;
     
-    expect(inputFields).toHaveLength(7);
+    expect(inputFields).toHaveLength(6);
     
     const urlField = inputFields.find(f => f.key === 'url');
     expect(urlField).toBeDefined();

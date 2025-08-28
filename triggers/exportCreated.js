@@ -67,7 +67,7 @@ const performListSample = async (z, bundle) => {
 };
 export default {
   key: 'exportCreated',
-  noun: 'Export Started',
+  noun: 'Export',
   display: {
     label: 'Export Started',
     description: 'Triggers when a new export job is created and queued for processing.'

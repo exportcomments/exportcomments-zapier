@@ -16,7 +16,7 @@ const authentication = {
       required: true,
       label: 'API Key',
       type: 'password',
-      helpText: 'Your ExportComments API key. You can find this at https://app.exportcomments.com/user/api'
+      helpText: 'Your ExportComments API key. You can find this at [https://app.exportcomments.com/user/api](https://app.exportcomments.com/user/api)'
     }
   ],
   connectionLabel: '{{user_email}} ({{plan}})'

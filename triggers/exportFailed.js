@@ -69,7 +69,7 @@ const performListSample = async (z, bundle) => {
 
 export default {
   key: 'exportFailed',
-  noun: 'Export Failed',
+  noun: 'Export',
   display: {
     label: 'Export Failed',
     description: 'Triggers when an export job fails due to errors or invalid content.'

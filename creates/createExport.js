@@ -3,8 +3,7 @@ const performCreate = async (z, bundle) => {
     limit: bundle.inputData.limit,
     followers: bundle.inputData.followers,
     likes: bundle.inputData.likes,
-    minTimestamp: bundle.inputData.minTimestamp,
-    cookies: bundle.inputData.cookies
+    minTimestamp: bundle.inputData.minTimestamp
   };
 
   // Remove undefined values
@@ -84,13 +83,6 @@ export default {
         type: 'integer',
         required: false,
         helpText: 'Unix timestamp to filter content from this date onwards'
-      },
-      {
-        key: 'cookies',
-        label: 'Cookies',
-        type: 'text',
-        required: false,
-        helpText: 'Authentication cookies for private content (if needed)'
       },
       {
         key: 'options',

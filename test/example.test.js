@@ -26,7 +26,7 @@ describe('ExportComments Zapier Integration', () => {
   it('should have correct trigger structure for exportCreated', () => {
     const trigger = App.triggers.exportCreated;
     expect(trigger.key).toBe('exportCreated');
-    expect(trigger.noun).toBe('Export Started');
+    expect(trigger.noun).toBe('Export');
     expect(trigger.operation.type).toBe('hook');
     expect(trigger.operation.performSubscribe).toBeDefined();
     expect(trigger.operation.performUnsubscribe).toBeDefined();
@@ -36,7 +36,7 @@ describe('ExportComments Zapier Integration', () => {
   it('should have correct trigger structure for exportCompleted', () => {
     const trigger = App.triggers.exportCompleted;
     expect(trigger.key).toBe('exportCompleted');
-    expect(trigger.noun).toBe('Export Completed');
+    expect(trigger.noun).toBe('Export');
     expect(trigger.operation.type).toBe('hook');
     expect(trigger.operation.performSubscribe).toBeDefined();
     expect(trigger.operation.performUnsubscribe).toBeDefined();
@@ -46,7 +46,7 @@ describe('ExportComments Zapier Integration', () => {
   it('should have correct trigger structure for exportFailed', () => {
     const trigger = App.triggers.exportFailed;
     expect(trigger.key).toBe('exportFailed');
-    expect(trigger.noun).toBe('Export Failed');
+    expect(trigger.noun).toBe('Export');
     expect(trigger.operation.type).toBe('hook');
     expect(trigger.operation.performSubscribe).toBeDefined();
     expect(trigger.operation.performUnsubscribe).toBeDefined();
