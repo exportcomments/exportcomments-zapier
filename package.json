@@ -1,0 +1,30 @@
+{
+  "name": "exportcomments-zapier",
+  "version": "1.0.2",
+  "description": "EXPORTCOMMENTS.COM is a Zapier integration for exporting comments and social media data with automated workflows",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --testTimeout 10000",
+    "zapier-dev": "zapier logs --type=http --detailed --limit=50",
+    "zapier-push": "zapier push",
+    "zapier-test": "zapier test"
+  },
+  "dependencies": {
+    "zapier-platform-core": "17.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0"
+  },
+  "private": true,
+  "exports": "./index.js",
+  "type": "module",
+  "jest": {
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "transform": {}
+  },
+  "keywords": ["zapier", "export", "comments", "social media", "automation"],
+  "author": "ExportComments.com",
+  "license": "ISC"
+}
